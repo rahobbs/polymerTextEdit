@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html> 
+
+<head>
+  <title>index</title>
+  <meta name="viewport" 
+    content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <script src="/components/platform/platform.js"></script>
+  <link rel="import" 
+    href="/components/font-roboto/roboto.html">
+  <link rel="import"
+  	href="/components/core-header-panel/core-header-panel.html">
+  <link rel="import"
+  	href="/components/core-toolbar/core-toolbar.html">
+  <link rel="import"
+  	href="/components/paper-tabs/paper-tabs.html">
+  <link rel="import" href="post-card.html">
+   <link href="/components/paper-input/paper-input.html" rel="import">
+    <link rel="import"
+    href="/components/paper-shadow/paper-shadow.html">
+        <link rel="import"
+    href="/components/paper-shadow/paper-shadow.css">
+  
+  <style>
+
+    html,body {
+    height: 100%;
+    margin: 0;
+    background-color: #E5E5E5;
+    font-family: 'RobotoDraft', sans-serif;
+  }
+ 		core-header-panel{
+ 			height: 100%;
+ 			overflow: auto;
+ 			-webkit-overflow-scrolling: touch;
+ 		}
+ 		core-toolbar{
+ 			background: black;
+ 			color: white;
+ 		}
+ 		#tabs {
+ 			width: 100%
+ 			margin: 0%;
+ 			-webkit-user-select: none;
+ 			-moz-user-select: none;
+ 			-ms-user-select: none;
+ 			user-select: none;
+ 		}
+ 		.container {
+    width: 80%;
+    margin: 50px auto;
+  }
+  	@media (min-width: 481px) {
+    	#tabs {
+      	width: 200px;
+    }
+    .container {
+      width: 400px;
+    }
+  }
+  polyfill-next-selector { content: '.card-header h2';}
+  .card-header ::content h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 300;
+  }
+  polyfill-next-selector {content: '.card-header img';}
+  .card-header ::content img {
+    width: 70px;
+    border-radius: 50%;
+    margin: 10px;
+  }
+
+  </style>
+</head>
+<body unresolved touch-action="auto">
+  <core-header-panel>
+    <core-toolbar>
+      <paper-tabs id="tabs" selected="all" self-end>
+        <paper-tab name="home">home</paper-tab>
+        <paper-tab name="settings">settings</paper-tab>
+      </paper-tabs>
+    </core-toolbar>
+
+  <div class="container" layout vertical center>
+    <post-card>
+      <paper-input floatingLabel label="Title"></paper-input>
+        <paper-input multiline label="Start typing text here"></paper-input>
+        <div style="height: 25px; width: 150px;"><paper-shadow>wordcount: 50</paper-shadow></div>
+    </post-card>
+  </div>
+  <content></content>
+  </core-header-panel>  
+  <script>
+    var tabs = document.querySelector('paper-tabs');
+    tabs.addEventListener('core-select', function(e) {
+      console.log("Selected: " + tabs.selected);
+    });
+  </script>
+</body>
+
+</html>
