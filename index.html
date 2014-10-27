@@ -3,9 +3,9 @@
 
 <head>
   <title>index</title>
+    <script src="/components/platform/platform.js"></script>
   <meta name="viewport" 
     content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-  <script src="/components/platform/platform.js"></script>
   <link rel="import" 
     href="/components/font-roboto/roboto.html">
   <link rel="import"
@@ -20,6 +20,14 @@
     href="/components/paper-shadow/paper-shadow.html">
         <link rel="import"
     href="/components/paper-shadow/paper-shadow.css">
+  <script> 
+  var tabs = document.querySelector('paper-tabs');
+  var list = document.querySelector('settings');
+
+  tabs.addEventListener('core-select', function() {
+  list.show = tabs.selected;
+  });
+  </script>
   
   <style>
 
@@ -76,7 +84,7 @@
 <body unresolved touch-action="auto">
   <core-header-panel>
     <core-toolbar>
-      <paper-tabs id="tabs" selected="all" self-end>
+      <paper-tabs id="tabs" selected="0" self-end>
         <paper-tab name="home">home</paper-tab>
         <paper-tab name="settings">settings</paper-tab>
       </paper-tabs>
@@ -86,7 +94,7 @@
     <post-card>
       <paper-input floatingLabel label="Title"></paper-input>
         <paper-input multiline label="Start typing text here"></paper-input>
-        <div style="height: 25px; width: 150px;"><paper-shadow>wordcount: 50</paper-shadow></div>
+        <div style="height: 25px; width: 150px;"><paper-shadow>Word Count: <span id="word-count">0</span></paper-shadow></div>
     </post-card>
   </div>
   <content></content>
@@ -97,6 +105,8 @@
       console.log("Selected: " + tabs.selected);
     });
   </script>
+  <script src="jquery-1.7.2.min.js"></script>
+  <script src="/scripts.js"></script>
 </body>
 
 </html>
