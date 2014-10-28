@@ -1,15 +1,18 @@
-$(document).ready(function () {   
-  $("#editor").bind('keyup click blur focus change paste', function () {
-    $('#word-count').text(countWords());
+
+window.addEventListener('polymer-ready', function(e) {
+	document.getElementById('editor').addEventListener('keyup', function () {
+    document.getElementById('word-count').innerHTML = countWords();
   });
 });
 
-
 function countWords() {
-    var contents = $("#editor").val();
-    var wordCount = 0;
-    if(!(contents === '')) {
-        wordCount = jQuery.trim($("#editor").val()).replace(/\s+/g, " ").split(" ").length;
-    }
-    return wordCount;
+  var contents = document.getElementById('editor').inputValue;
+  var tokens = jQuery.trim(contents).replace(/\s+/g, " ").split(" ");
+
+  var wordCount = 0;
+  if(tokens[0] != '') {
+    wordCount = tokens.length;
+  }
+
+  return wordCount;
 }
