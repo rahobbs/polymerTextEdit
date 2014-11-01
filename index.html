@@ -14,6 +14,7 @@
     href="/components/core-icon-button/core-icon-button.html">
   <link rel="import"
     href="/components/core-item/core-item.html">
+  <link rel="import" href="components/core-icons/iconsets/icons.html" rel="import">
   <link rel="import"
   	href="/components/core-toolbar/core-toolbar.html">
   <link rel="import" href="post-card.html">
@@ -82,7 +83,7 @@
 <body unresolved touch-action="auto">
   <core-header-panel>
     <core-toolbar>
-      <div flex>Title</paper-input></div>
+      <div flex>write</paper-input></div>
         <core-icon-button icon="menu"></core-icon-button>
     </core-toolbar>
 
@@ -90,7 +91,7 @@
     <post-card>
         <paper-input label="Title"></paper-input>
         <paper-input style="width: 100%;" multiline label="Start typing text here" id="editor"></paper-input>
-        <div style="height: 25px; width: 150px; text-align: center;"><paper-shadow> Word Count: <span id="word-count">0</span></paper-shadow></div>
+        <div style="height: 25px; display:inline-block; text-align: center; white-space: nowrap;`"><paper-shadow> Word Count: <span id="word-count">0</span></paper-shadow></div>
     </post-card>
   </div>
   <content></content>
