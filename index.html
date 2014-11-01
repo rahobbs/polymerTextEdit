@@ -45,8 +45,14 @@
  			background: #50C878;
  			color: white;
  		}
+
+    paper-tabs{
+      height: 100%;
+      width: 100%;
+    }
+
  		#tabs {
- 			width: 100%
+ 			width: 100%;
  			margin: 0%;
  			-webkit-user-select: none;
  			-moz-user-select: none;
@@ -81,7 +87,7 @@
 <body unresolved touch-action="auto">
   <core-header-panel>
     <core-toolbar>
-      <paper-tabs id="tabs" selected="0" self-end>
+      <paper-tabs id="tabs" selected="0" fit self-end>
         <paper-tab name="home">home</paper-tab>
         <paper-tab name="settings">settings</paper-tab>
       </paper-tabs>
