@@ -15,11 +15,10 @@
   <link rel="import"
   	href="/components/paper-tabs/paper-tabs.html">
   <link rel="import" href="post-card.html">
-   <link href="/components/paper-input/paper-input.html" rel="import">
-    <link rel="import"
-    href="/components/paper-shadow/paper-shadow.html">
-        <link rel="import"
-    href="/components/paper-shadow/paper-shadow.css">
+  <link href="/components/paper-input/paper-input.html" rel="import">
+  <link rel="import" href="/components/paper-shadow/paper-shadow.html">
+  <link rel="import" href="/components/paper-shadow/paper-shadow.css">
+  <link rel="import" href="styles.css">
   <script> 
   var tabs = document.querySelector('paper-tabs');
   var list = document.querySelector('settings');
@@ -32,12 +31,12 @@
   <style>
 
     html,body {
-    height: 100%;
-    margin: 0;
-    background-color: #E5E5E5;
-    font-family: 'RobotoDraft', sans-serif;
-  }
- 		core-header-panel{
+      height: 100%;
+      margin: 0;
+      background-color: #E5E5E5;
+      font-family: 'RobotoDraft', sans-serif;
+    }
+ 	  core-header-panel{
  			height: 100%;
  			overflow: auto;
  			-webkit-overflow-scrolling: touch;
@@ -57,14 +56,12 @@
  		.container {
     width: 80%;
     margin: 50px auto;
-  }
+    }
   	@media (min-width: 481px) {
     	#tabs {
       	width: 200px;
     }
-    .container {
-      width: 400px;
-    }
+
   }
   polyfill-next-selector { content: '.card-header h2';}
   .card-header ::content h2 {
@@ -93,8 +90,8 @@
   <div class="container" layout vertical center>
     <post-card>
       <paper-input floatingLabel label="Title"></paper-input>
-        <paper-input multiline label="Start typing text here" id="editor"></paper-input>
-        <div style="height: 25px; width: 150px;"><paper-shadow>Word Count: <span id="word-count">0</span></paper-shadow></div>
+        <paper-input style="width: 100%;" multiline label="Start typing text here" id="editor"></paper-input>
+        <div style="height: 25px; width: 150px; text-align: center;"><paper-shadow> Word Count: <span id="word-count">0</span></paper-shadow></div>
     </post-card>
   </div>
   <content></content>
